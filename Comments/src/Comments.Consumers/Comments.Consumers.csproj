@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-Comments.Consumers-bcb9f484-e050-485d-8410-bb5dc7a84b53</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Confluent.Kafka" Version="2.12.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.8" />
+    <PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Comments.Application\Comments.Application.csproj" />
+    <ProjectReference Include="..\Comments.Infrastructure\Comments.Infrastructure.csproj" />
+    <ProjectReference Include="..\Comments.SharedKernel\Comments.SharedKernel.csproj" />
+    <ProjectReference Include="..\Comments.Contracts\Comments.Contracts.csproj" />
+  </ItemGroup>
+</Project>
