@@ -1,0 +1,6 @@
+@MyApp.Comments.Host_HostAddress = http://localhost:5260
+
+GET {{MyApp.Comments.Host_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
