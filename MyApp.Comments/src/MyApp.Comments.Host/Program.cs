@@ -1,41 +1,57 @@
+using System.Net;
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using Microsoft.EntityFrameworkCore;
+using MyApp.Comments.Core.Application;
+using MyApp.Comments.Infrastructure.Persistence;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+// --- EF Core (SQL Server) ---
+//builder.Services.AddDbContext<CommentsDbContext>(opt =>
+//{
+//    var cs = builder.Configuration.GetConnectionString("DefaultConnection")
+//             ?? throw new InvalidOperationException("Missing ConnectionStrings:DefaultConnection");
+//    opt.UseSqlServer(cs);
+//});
+
+// --- MediatR (scan Core.Application) ---
+builder.Services.AddMediatR(cfg =>
+    cfg.RegisterServicesFromAssembly(typeof(AssemblyMarker).Assembly));
+
+// --- FluentValidation ---
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddValidatorsFromAssembly(typeof(AssemblyMarker).Assembly);
+
+// --- Web ---
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+builder.Services.AddCommentsPersistence(builder.Configuration);
+// builder.Services.AddControllers();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
-app.UseHttpsRedirection();
+// Minimal health endpoints
+app.MapGet("/healthz", () => Results.Ok(new { status = "OK" }));
 
-var summaries = new[]
+app.MapGet("/healthz/db", async (CommentsDbContext db, CancellationToken ct) =>
 {
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+    try
+    {
+        var canConnect = await db.Database.CanConnectAsync(ct);
+        return canConnect
+            ? Results.Ok(new { status = "OK", db = "Up" })
+            : Results.StatusCode((int)HttpStatusCode.ServiceUnavailable);
+    }
+    catch (Exception ex)
+    {
+        return Results.Problem(title: "DB unreachable", detail: ex.Message, statusCode: (int)HttpStatusCode.ServiceUnavailable);
+    }
+});
 
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
+// app.MapControllers();
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

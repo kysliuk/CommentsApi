@@ -5,7 +5,4 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
-  <ItemGroup>
-    <InternalsVisibleTo Include=""MyApp.Comments.Host"" />
-  </ItemGroup>
 </Project>
