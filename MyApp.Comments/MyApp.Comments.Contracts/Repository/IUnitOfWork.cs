@@ -1,6 +1,4 @@
-﻿using MyApp.Comments.Core.Domain;
-
-namespace MyApp.Comments.Core.Application;
+﻿namespace MyApp.Comments.Contracts;
 
 public interface IUnitOfWork
 {

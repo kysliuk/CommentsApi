@@ -1,7 +1,6 @@
 using System.Net;
 using FluentValidation;
 using FluentValidation.AspNetCore;
-using Microsoft.EntityFrameworkCore;
 using MyApp.Comments.Core.Application;
 using MyApp.Comments.Infrastructure;
 using MyApp.Comments.Infrastructure.Persistence;

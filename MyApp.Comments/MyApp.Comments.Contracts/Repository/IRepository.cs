@@ -1,7 +1,6 @@
-﻿using MyApp.Comments.Core.Domain;
-using System.Linq.Expressions;
+﻿using System.Linq.Expressions;
 
-namespace MyApp.Comments.Core.Application;
+namespace MyApp.Comments.Contracts;
 
 public interface IRepository<T> where T : BaseEntity
 {

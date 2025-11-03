@@ -1,5 +1,4 @@
-﻿using MyApp.Comments.Core.Application;
-using MyApp.Comments.Core.Domain;
+﻿using MyApp.Comments.Contracts;
 using System.Collections;
 
 namespace MyApp.Comments.Infrastructure.Persistence;

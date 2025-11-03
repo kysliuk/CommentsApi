@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\MyApp.Comments.Contracts\MyApp.Comments.Contracts.csproj" />
     <ProjectReference Include="..\MyApp.Comments.Core\MyApp.Comments.Core.csproj" />
   </ItemGroup>
 

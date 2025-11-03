@@ -1,4 +1,4 @@
-﻿namespace MyApp.Comments.Core.Domain;
+﻿namespace MyApp.Comments.Contracts;
 
 public abstract class BaseEntity
 {

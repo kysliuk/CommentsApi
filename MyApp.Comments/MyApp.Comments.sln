@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Comments.Infrastructu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Comments.Host", "src\MyApp.Comments.Host\MyApp.Comments.Host.csproj", "{5931E253-6090-4278-AD98-226FC9F11CBC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Comments.Contracts", "MyApp.Comments.Contracts\MyApp.Comments.Contracts.csproj", "{2928BB46-4256-4508-8E4A-1718C50ABD26}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,18 @@ Global
 		{5931E253-6090-4278-AD98-226FC9F11CBC}.Release|x64.Build.0 = Release|Any CPU
 		{5931E253-6090-4278-AD98-226FC9F11CBC}.Release|x86.ActiveCfg = Release|Any CPU
 		{5931E253-6090-4278-AD98-226FC9F11CBC}.Release|x86.Build.0 = Release|Any CPU
+		{2928BB46-4256-4508-8E4A-1718C50ABD26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2928BB46-4256-4508-8E4A-1718C50ABD26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2928BB46-4256-4508-8E4A-1718C50ABD26}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2928BB46-4256-4508-8E4A-1718C50ABD26}.Debug|x64.Build.0 = Debug|Any CPU
+		{2928BB46-4256-4508-8E4A-1718C50ABD26}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2928BB46-4256-4508-8E4A-1718C50ABD26}.Debug|x86.Build.0 = Debug|Any CPU
+		{2928BB46-4256-4508-8E4A-1718C50ABD26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2928BB46-4256-4508-8E4A-1718C50ABD26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2928BB46-4256-4508-8E4A-1718C50ABD26}.Release|x64.ActiveCfg = Release|Any CPU
+		{2928BB46-4256-4508-8E4A-1718C50ABD26}.Release|x64.Build.0 = Release|Any CPU
+		{2928BB46-4256-4508-8E4A-1718C50ABD26}.Release|x86.ActiveCfg = Release|Any CPU
+		{2928BB46-4256-4508-8E4A-1718C50ABD26}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,5 +79,9 @@ Global
 		{54904A4C-2FA5-4BC8-8EDD-3029D2F4CD5A} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{363910B3-85A3-4D29-A29A-58DEF3296501} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{5931E253-6090-4278-AD98-226FC9F11CBC} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+		{2928BB46-4256-4508-8E4A-1718C50ABD26} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D2AA3F38-15F3-4E24-818A-C92C52356779}
 	EndGlobalSection
 EndGlobal
