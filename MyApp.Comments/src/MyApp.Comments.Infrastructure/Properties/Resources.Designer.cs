@@ -68,5 +68,14 @@ namespace MyApp.Comments.Infrastructure.Properties {
                 return ResourceManager.GetString("DefaultConnection", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Comment.
+        /// </summary>
+        internal static string Table_Comment {
+            get {
+                return ResourceManager.GetString("Table_Comment", resourceCulture);
+            }
+        }
     }
 }

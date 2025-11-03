@@ -120,4 +120,7 @@
   <data name="DefaultConnection" xml:space="preserve">
     <value>DefaultConnection</value>
   </data>
+  <data name="Table_Comment" xml:space="preserve">
+    <value>Comment</value>
+  </data>
 </root>
