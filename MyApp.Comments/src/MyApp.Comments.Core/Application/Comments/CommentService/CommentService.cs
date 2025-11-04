@@ -1,5 +1,6 @@
 ﻿using MyApp.Comments.Core.Domain;
 using Microsoft.EntityFrameworkCore;
+using MyApp.Comments.Contracts;
 
 namespace MyApp.Comments.Core.Application.Comments;
 

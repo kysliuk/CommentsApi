@@ -14,4 +14,8 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.10" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\MyApp.Comments.Contracts\MyApp.Comments.Contracts.csproj" />
+  </ItemGroup>
+
 </Project>

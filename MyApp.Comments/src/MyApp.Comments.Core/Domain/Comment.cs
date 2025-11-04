@@ -1,4 +1,6 @@
-﻿namespace MyApp.Comments.Core.Domain;
+﻿using MyApp.Comments.Contracts;
+
+namespace MyApp.Comments.Core.Domain;
 
 public sealed class Comment : BaseEntity
 {

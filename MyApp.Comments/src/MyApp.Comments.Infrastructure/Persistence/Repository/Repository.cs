@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MyApp.Comments.Core.Application;
-using MyApp.Comments.Core.Domain;
+using MyApp.Comments.Contracts;
 using System.Linq.Expressions;
 
 namespace MyApp.Comments.Infrastructure.Persistence;
